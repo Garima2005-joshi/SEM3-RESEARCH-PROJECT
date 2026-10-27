@@ -1,0 +1,79 @@
+# .gitignore — SEM3 Research Project
+# ====================================
+
+# --- Python bytecode and caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.env/
+
+# --- Distribution / packaging ---
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+MANIFEST
+
+# --- Test and coverage artefacts ---
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# --- Environment variable / secrets files ---
+.env
+.env.*
+*.secret
+secrets.py
+config_local.py
+credentials.json
+service_account.json
+
+# --- Jupyter / IPython ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Datasets and model files (do NOT commit to a public repo) ---
+data/
+datasets/
+*.csv
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.parquet
+models/
+*.model
+
+# --- Logs ---
+*.log
+logs/
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE and editor files ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# --- Windows-specific ---
+$RECYCLE.BIN/

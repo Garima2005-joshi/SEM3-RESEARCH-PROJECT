@@ -1,0 +1,22 @@
+# requirements.txt
+# -----------------
+# Module 1 (URL Input and Validation) uses only Python's standard library:
+#   urllib.parse  — URL parsing and component extraction
+#   ipaddress     — IP address classification
+#   unicodedata   — Unicode normalization for IDN hostnames
+#   unittest      — automated testing (built-in)
+#
+# Module 1 Analyst Dashboard (app.py):
+#   streamlit     — interactive web interface
+
+streamlit>=1.32.0
+
+# When future modules are added (e.g., HTTP fetching, ML inference),
+# their dependencies will be listed here.
+#
+# To create and activate a virtual environment on Windows (recommended):
+#   py -m venv .venv
+#   .venv\Scripts\Activate.ps1
+#
+# To install dependencies after activating the environment:
+#   pip install -r requirements.txt
