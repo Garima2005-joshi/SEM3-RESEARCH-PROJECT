@@ -74,14 +74,29 @@ with nav_brand_col:
 with nav_links_col:
     st.markdown("<div style='padding-top:1.15rem; text-align:right;'>", unsafe_allow_html=True)
     if _authenticated:
-        btn_col1, btn_col2 = st.columns(2)
-        with btn_col1:
-            if st.button("Analyze URL", type="primary", use_container_width=True):
-                st.switch_page("pages/analyst_detection.py")
-        with btn_col2:
-            if st.button("Sign out", type="secondary", use_container_width=True):
-                logout()
-                st.rerun()
+        if _role == ROLE_ADMIN:
+            # Admin: three buttons — Analyze URL, Research Dashboard, Sign out
+            btn_col1, btn_col2, btn_col3 = st.columns(3)
+            with btn_col1:
+                if st.button("Analyze URL", type="primary", use_container_width=True):
+                    st.switch_page("pages/analyst_detection.py")
+            with btn_col2:
+                if st.button("📊 Research", type="secondary", use_container_width=True):
+                    st.switch_page("pages/model_comparison.py")
+            with btn_col3:
+                if st.button("Sign out", type="secondary", use_container_width=True):
+                    logout()
+                    st.rerun()
+        else:
+            # Analyst: two buttons — Analyze URL, Sign out
+            btn_col1, btn_col2 = st.columns(2)
+            with btn_col1:
+                if st.button("Analyze URL", type="primary", use_container_width=True):
+                    st.switch_page("pages/analyst_detection.py")
+            with btn_col2:
+                if st.button("Sign out", type="secondary", use_container_width=True):
+                    logout()
+                    st.rerun()
     else:
         if st.button("Sign in", type="primary"):
             st.switch_page("pages/login.py")
